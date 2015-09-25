@@ -1,0 +1,257 @@
+<!DOCTYPE>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sass-grids</title>
+    <link rel="stylesheet" href="dist/sass-grids.css">
+    <link rel="stylesheet" href="demo-site.css">
+  </head>
+  <body>
+  <a href="https://github.com/nsommer"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <div class="container">
+      <h1>sass-grids demo</h1>
+
+      <p>
+        Below you'll see a few examples of the grid system in action.
+
+        It uses the standard configuration with <strong>10 cells per line</strong> and a gutter width of 1em.
+
+        The naming convention of the grid size classes follow natural language instead of decimal numbers for better readability. For example: A cell that takes 50% of its parent width is called <strong>cell-half</strong>.
+      </p>
+
+      <h3>2 half width cells</h3>
+
+<pre><code class="prettyprint">
+&lt;div class="grid"&gt;
+  &lt;div class="cell cell-half"&gt;
+    1/2 width
+  &lt;/div&gt;
+  &lt;div class="cell cell-half"&gt;
+    1/2 width
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <div class="grid">
+        <div class="cell cell-half">
+          <div class="funny-box">
+            1/2 width
+          </div>
+        </div>
+        <div class="cell cell-half">
+          <div class="funny-box">
+            1/2 width
+          </div>
+        </div>
+      </div>
+
+      <h3>3 third width cells</h3>
+
+<pre><code class="prettyprint">
+&lt;div class="grid"&gt;
+  &lt;div class="cell cell-third"&gt;
+    1/3 width
+  &lt;/div&gt;
+  &lt;div class="cell cell-third"&gt;
+    1/3 width
+  &lt;/div&gt;
+  &lt;div class="cell cell-third"&gt;
+    1/3 width
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <div class="grid">
+        <div class="cell cell-third">
+          <div class="funny-box">
+            1/3 width
+          </div>
+        </div>
+        <div class="cell cell-third">
+          <div class="funny-box">
+            1/3 width
+          </div>
+        </div>
+        <div class="cell cell-third">
+          <div class="funny-box">
+            1/3 width
+          </div>
+        </div>
+      </div>
+
+      <h3>4 quarter width cells</h3>
+
+<pre><code class="prettyprint">
+&lt;div class="grid"&gt;
+  &lt;div class="cell cell-quarter"&gt;
+    1/4 width
+  &lt;/div&gt;
+  &lt;div class="cell cell-quarter"&gt;
+    1/4 width
+  &lt;/div&gt;
+  &lt;div class="cell cell-quarter"&gt;
+    1/4 width
+  &lt;/div&gt;
+  &lt;div class="cell cell-quarter"&gt;
+    1/4 width
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <div class="grid">
+        <div class="cell cell-quarter">
+          <div class="funny-box">
+            1/4 width
+          </div>
+        </div>
+        <div class="cell cell-quarter">
+          <div class="funny-box">
+            1/4 width
+          </div>
+        </div>
+        <div class="cell cell-quarter">
+          <div class="funny-box">
+            1/4 width
+          </div>
+        </div>
+        <div class="cell cell-quarter">
+          <div class="funny-box">
+            1/4 width
+          </div>
+        </div>
+      </div>
+
+      <h3>Wildly mixed cell sizes</h3>
+
+      <p>
+        You get it ...
+      </p>
+
+      <div class="grid">
+        <div class="cell cell-quarter">
+          <div class="funny-box">
+            1/4 width
+          </div>
+        </div>
+        <div class="cell cell-half">
+          <div class="funny-box">
+            1/2 width
+          </div>
+        </div>
+        <div class="cell cell-eigth">
+          <div class="funny-box">
+            1/8 width
+          </div>
+        </div>
+        <div class="cell cell-eigth">
+          <div class="funny-box">
+            1/8 width
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+        <div class="cell cell-tenth">
+          <div class="funny-box">
+            1/10 width
+          </div>
+        </div>
+      </div>
+
+      <h2>Aligning single cells</h2>
+
+      <p>
+        Sometimes you might want to align a single cell. To achieve that, use the classes of the corresponding examples below.
+      </p>
+
+<pre><code class="prettyprint">
+&lt;div class="grid"&gt;
+  &lt;div class="cell cell-third"&gt;
+    1/3 left
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="grid"&gt;
+  &lt;div class="cell cell-third cell-right"&gt;
+    1/3 right
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="grid"&gt;
+  &lt;div class="cell cell-third cell-center"&gt;
+    1/3 centered
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <div class="grid">
+        <div class="cell cell-third">
+          <div class="funny-box">
+            1/3 left
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="cell cell-third cell-right">
+          <div class="funny-box">
+            1/3 right
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="cell cell-third cell-center">
+          <div class="funny-box">
+            1/3 centered
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  </body>
+</html>

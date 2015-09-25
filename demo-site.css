@@ -1,0 +1,68 @@
+/*
+ * Styles for the demo site of sass-grids.
+ */
+
+/*
+ * Basic stuff.
+ * ===========================
+ */
+
+html {
+  font-size: 14px;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+}
+
+body {
+  background-color: #efefef;
+}
+
+pre,
+code {
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 { margin-bottom: 0; }
+
+/*
+ * Container of the content.
+ * ===========================
+ */
+.container {
+  display: block;
+  margin: 1em auto;
+  width: 480px;
+
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: .3em;
+  padding: 1em 2em;
+}
+
+@media (min-width: 640px) {
+  .container { width: 560px; }
+}
+
+@media (min-width: 960px) {
+  .container { width: 640px; }
+}
+
+@media (min-width: 1200px) {
+  .container { width: 940px; }
+}
+
+/*
+ * Colored boxes to put inside cells to attractively show their size.
+ * ===========================
+ */
+
+.funny-box {
+  margin: .5em;
+  padding: 1em 0;
+  text-align: center;
+  font-weight: bold;
+  background-color: #D6FFAD;
+}
