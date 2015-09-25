@@ -2,36 +2,72 @@
   width: 50%;
 }
 
+.cell-offset-half {
+  margin-left: 50%;
+}
+
 .cell-third {
   width: 33.33333%;
+}
+
+.cell-offset-third {
+  margin-left: 33.33333%;
 }
 
 .cell-quarter {
   width: 25%;
 }
 
+.cell-offset-quarter {
+  margin-left: 25%;
+}
+
 .cell-fifth {
   width: 20%;
+}
+
+.cell-offset-fifth {
+  margin-left: 20%;
 }
 
 .cell-sixth {
   width: 16.66667%;
 }
 
+.cell-offset-sixth {
+  margin-left: 16.66667%;
+}
+
 .cell-seventh {
   width: 14.28571%;
+}
+
+.cell-offset-seventh {
+  margin-left: 14.28571%;
 }
 
 .cell-eigth {
   width: 12.5%;
 }
 
+.cell-offset-eigth {
+  margin-left: 12.5%;
+}
+
 .cell-ninth {
   width: 11.11111%;
 }
 
+.cell-offset-ninth {
+  margin-left: 11.11111%;
+}
+
 .cell-tenth {
   width: 10%;
+}
+
+.cell-offset-tenth {
+  margin-left: 10%;
 }
 
 .cell {

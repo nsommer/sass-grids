@@ -4,8 +4,16 @@
 
 // Build styles for a cell.
 
+@function calc-width($index) {
+  @return 100% * (1 / $index);
+}
+
 @mixin build-cell($index) {
-  width: 100% * (1 / $index);
+  width: calc-width($index);
+}
+
+@mixin build-offset($index) {
+  margin-left: calc-width($index);
 }
 
 // Validate variables set by user.
@@ -25,5 +33,9 @@
 @for $i from 2 through $cells-per-row {
   .cell-#{map-get($dictionary, $i)} {
     @include build-cell($i);
+  }
+
+  .cell-offset-#{map-get($dictionary, $i)} {
+    @include build-offset($i);
   }
 }
