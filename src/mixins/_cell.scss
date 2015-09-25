@@ -1,0 +1,29 @@
+//
+// Mixins for generation of cell sizes.
+//
+
+// Build styles for a cell.
+
+@mixin build-cell($index) {
+  width: 100% * (1 / $index);
+}
+
+// Validate variables set by user.
+
+@if ($cells-per-row > (length($dictionary) + 1)) {
+  @error "For #{$cells-per-row} you need at least #{$cells-per-row - 1} entries in the dictionary map.";
+}
+
+@if ($cells-per-row < 1) {
+  @error "$cells-per-row must be greater than zero.";
+} @else if($cells-per-row == 1) {
+  @warn "Setting $cells-per-row to 1 does not make any sense! You should set it to at least 2.";
+}
+
+// Generate the cell size classes.
+
+@for $i from 2 through $cells-per-row {
+  .cell-#{map-get($dictionary, $i)} {
+    @include build-cell($i);
+  }
+}

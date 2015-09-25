@@ -1,0 +1,65 @@
+.cell-half {
+  width: 50%;
+}
+
+.cell-third {
+  width: 33.33333%;
+}
+
+.cell-quarter {
+  width: 25%;
+}
+
+.cell-fifth {
+  width: 20%;
+}
+
+.cell-sixth {
+  width: 16.66667%;
+}
+
+.cell-seventh {
+  width: 14.28571%;
+}
+
+.cell-eigth {
+  width: 12.5%;
+}
+
+.cell-ninth {
+  width: 11.11111%;
+}
+
+.cell-tenth {
+  width: 10%;
+}
+
+.cell {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 0.5em;
+}
+
+.cell-right {
+  float: right;
+}
+
+.cell-center {
+  margin: 0 auto;
+  float: none;
+}
+
+.grid {
+  display: block;
+  box-sizing: border-box;
+}
+.grid:before, .grid:after {
+  content: " ";
+  display: table;
+}
+.grid:after {
+  clear: both;
+}
+
+/*# sourceMappingURL=sass-grids.css.map */
