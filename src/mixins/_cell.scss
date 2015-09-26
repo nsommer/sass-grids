@@ -28,14 +28,35 @@
   @warn "Setting $cells-per-row to 1 does not make any sense! You should set it to at least 2.";
 }
 
-// Generate the cell size classes.
-
-@for $i from 2 through $cells-per-row {
-  .cell-#{map-get($dictionary, $i)} {
-    @include build-cell($i);
+@mixin build-cell-sizes($index) {
+  // Standard cell size and offset.
+  .cell-#{map-get($dictionary, $index)} {
+    @include build-cell($index);
   }
 
-  .cell-offset-#{map-get($dictionary, $i)} {
-    @include build-offset($i);
+  .cell-offset-#{map-get($dictionary, $index)} {
+    @include build-offset($index);
+  }
+
+  @if $responsive-size-classes {
+    // Responsive size classes.
+    @each $name, $width in $width-breakpoints {
+      @media (min-width: $width) {
+        .cell-#{$name}-#{map-get($dictionary, $index)} {
+          @include build-cell($index);
+        }
+
+        .cell-offset-#{$name}-#{map-get($dictionary, $index)} {
+          @include build-offset($index);
+        }
+      }
+    }
   }
 }
+
+// Generate the cell size classes.
+
+@for $index from 2 through $cells-per-row {
+  @include build-cell-sizes($index);
+}
+
