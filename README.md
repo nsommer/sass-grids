@@ -48,7 +48,7 @@ npm install
 After that, compiling the Sass files into CSS is as easy as typing:
 
 ```bash
-grunt sass
+grunt dist
 ```
 
 ## Float based
