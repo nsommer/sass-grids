@@ -1,0 +1,16 @@
+//
+// This framework can be customized by changing the variables in src/_variables.scss.
+// Therefore, do some validations to interrupt the build process in case the variables contain bullshit.
+//
+
+// Check whether enough sizes are specified, otherwise it doesn't make sense to build those classes.
+
+@if ($cells-per-row > (length($dictionary) + 1)) {
+  @error "For #{$cells-per-row} you need at least #{$cells-per-row - 1} entries in the dictionary map.";
+}
+
+@if ($cells-per-row < 1) {
+  @error "$cells-per-row must be greater than zero.";
+} @else if($cells-per-row == 1) {
+  @warn "Setting $cells-per-row to 1 does not make any sense! You should set it to at least 2.";
+}

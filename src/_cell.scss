@@ -2,12 +2,18 @@
 // Cells that can be inserted into grids.
 //
 
+// Basic cell.
+
 .cell {
   display: block;
   box-sizing: border-box;
   float: left;
   padding: 0 ($gutter / 2);
 }
+
+// Sizes.
+
+@include build-cells;
 
 // Utilities.
 
