@@ -110,5 +110,7 @@ Besides floating based grid systems, there do also exist solutions that use *fle
 ## Yet another grid system?
 I needed a grid system for a website I was building so I took the opportunity to improve my Sass skills by writing it from scratch by myself. :-)
 
+Check out the [blog post](https://nilssommer.de/articles/2-building-a-grid-system-with-sass) I wrote about it.
+
 ## License
 MIT license rocks.
