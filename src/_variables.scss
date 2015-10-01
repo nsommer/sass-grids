@@ -4,10 +4,10 @@
 //
 
 // Gutter between cells.
-$gutter: 1em;
+$gutter: 1em !default;
 
 // Number of grids that float next to each other in one row.
-$cells-per-row: 10;
+$cells-per-row: 10 !default;
 
 // Dictionary for number<->word mapping.
 // Needed to generate human readable class names.
@@ -30,10 +30,10 @@ $dictionary: (
   13: "thirteenth",
   14: "fourteenth",
   15: "fifteenth"
-);
+) !default;
 
 // Enable/Disable responsive size classes.
-$responsive-size-classes: true;
+$responsive-size-classes: true !default;
 
 // Define break points for responsive design here.
 //
@@ -50,4 +50,4 @@ $width-breakpoints: (
   "tablet":     720px,
   "desktop":    960px,
   "widescreen": 1200px
-);
+) !default;
