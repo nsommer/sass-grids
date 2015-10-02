@@ -17,6 +17,12 @@ Besides cloning this repository, you may want to use a package manager for insta
 npm install sass-grids
 ```
 
+### bower
+
+```shell
+bower install sass-grids
+```
+
 ## Usage
 For detailed documentation, visit the [demo page](https://nsommer.github.io/sass-grids). Here's the short version:
 
