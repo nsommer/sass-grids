@@ -8,6 +8,15 @@ This is a very simple CSS grid system, built with Sass. It allows to generate a 
 - Utility classes for cell alignment and offsets.
 - Configurable optional responsive sizing classes.
 
+## Installation
+Besides cloning this repository, you may want to use a package manager for installation.
+
+### npm
+
+```shell
+npm install sass-grids
+```
+
 ## Usage
 For detailed documentation, visit the [demo page](https://nsommer.github.io/sass-grids). Here's the short version:
 
