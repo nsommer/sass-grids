@@ -2,6 +2,22 @@ CSS Grid System
 ================
 This is a very simple CSS grid system, built with Sass. It allows to generate a custom grid system by changing a few variables.
 
+## Table of Contents
+- [Capabilities](#capabilities)
+- [Installation](#installation)
+    - [npm](#npm)
+    - [bower](#bower)
+- [Usage](#usage)
+- [Customize](#customize)
+    - [Number of cell sizing classes](#number-of-cell-sizing-classes)
+    - [Gutter](#gutter)
+    - [Responsive sizing classes](#responsive-sizing-classes)
+- [Compiling the sass files](#compiling-the-sass-files)
+- [Float based](#float-based)
+- [Yet another grid system?](#yet-another-grid-system)
+- [Changelog](#changelog)
+- [License](#license)
+
 ## Capabilities
 - Float based grid system with configurable size classes.
 - Natural language class names rather than decimal numbers.
@@ -51,7 +67,7 @@ $responsive-size-classes: false;
 @import "sass-grids";
 ```
 
-### Customizing the number of cell sizing classes
+### Number of cell sizing classes
 The number of cells per row for which css classes are generated ist set by the `$cells-per-row` variable. To create human readable class names, a map (`$dictionary`) is used that contains numeric values to string mappings.
 
 Default values:
@@ -126,6 +142,11 @@ Besides floating based grid systems, there do also exist solutions that use *fle
 I needed a grid system for a website I was building so I took the opportunity to improve my Sass skills by writing it from scratch by myself. :-)
 
 Check out the [blog post](https://nilssommer.de/articles/2-building-a-grid-system-with-sass) I wrote about it.
+
+## Changelog
+- **0.1.2** Eases customization
+- **0.1.1** Bug fixes
+- **0.1.0** Initial release
 
 ## License
 MIT license rocks.
