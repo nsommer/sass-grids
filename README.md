@@ -1,18 +1,18 @@
 CSS Grid System
 ================
-This is a very simple CSS grid system, built with Sass. It allows to generate a custom grid system by changing a few variables.
+A simple, responsive and customizable grid system for CSS, built with Sass.
 
 ## Table of Contents
 - [Capabilities](#capabilities)
 - [Installation](#installation)
     - [npm](#npm)
     - [bower](#bower)
+    - [git](#git)
 - [Usage](#usage)
 - [Customize](#customize)
     - [Number of cell sizing classes](#number-of-cell-sizing-classes)
     - [Gutter](#gutter)
     - [Responsive sizing classes](#responsive-sizing-classes)
-- [Compiling the sass files](#compiling-the-sass-files)
 - [Float based](#float-based)
 - [Yet another grid system?](#yet-another-grid-system)
 - [Changelog](#changelog)
@@ -25,7 +25,7 @@ This is a very simple CSS grid system, built with Sass. It allows to generate a 
 - Configurable optional responsive sizing classes.
 
 ## Installation
-Besides cloning this repository, you may want to use a package manager for installation.
+The easiest way to use sass-grids is to use a package manager like *npm* or *bower*. However, cloning the repository and manually compiling is also possible.
 
 ### npm
 
@@ -39,14 +39,24 @@ npm install sass-grids
 bower install sass-grids
 ```
 
+### git
+You need to install *git*, *node.js*, *npm* and the *sass* gem.
+
+```
+git clone https://github.com/nsommer/sass-grids.git
+cd sass-grids
+npm install
+grunt dist
+```
+
 ## Usage
-For detailed documentation, visit the [demo page](https://nsommer.github.io/sass-grids). Here's the short version:
+For detailed documentation, visit the [demo page](https://nsommer.github.io/sass-grids). Here's an example:
 
 ```html
 <div class="grid">
-  <div class="cell cell-half">   I'm a cell taking half the width of my parent.        </div>
-  <div class="cell cell-quarter">I'm a cell taking a quarter of the width of my parent.</div>
-  <div class="cell cell-quarter">I'm a cell taking a quarter of the width of my parent.</div>
+  <div class="cell cell-five-tenths">I'm a cell taking half the width of my parent.        </div>
+  <div class="cell cell-four-tenths">I'm a cell taking a quarter of the width of my parent.</div>
+  <div class="cell cell-one-tenth">  I'm a cell taking a quarter of the width of my parent.</div>
 </div>
 ```
 
@@ -55,6 +65,8 @@ To be able to use the grid system with standard values, copy the `dist/sass-grid
 ```html
 <link rel="stylesheet" href="sass-grids.css">
 ```
+
+Alternatively, you can overwrite the standard settings and compile your own custom grid system.
 
 ## Customize
 All configuration variables are defined in `src/_variables.scss`. Due to the usage of the `!default` keyword on all variables, it is very easy to customize those values. Just create a Sass file that resets the variables you want to and import `sass-grids` after that (of course outsourcing the variable resets into a scss file of its own would be good practice). E.g.:
@@ -68,28 +80,58 @@ $responsive-size-classes: false;
 ```
 
 ### Number of cell sizing classes
-The number of cells per row for which css classes are generated ist set by the `$cells-per-row` variable. To create human readable class names, a map (`$dictionary`) is used that contains numeric values to string mappings.
+The number of cells per row for which css classes are generated ist set by the `$cells-per-row` variable. To create human readable class names, two maps - `$number-names` and `$share-names` - are used. By default, they include entries for grid systems with up to 20 cells per row. If you want to generate a grid system with more than 20 cells per row possible, you have to overwrite the maps with maps that contain enough entries for your grid system.
 
 Default values:
 
 ```sass
-$cells-per-row: 10 !default;
-$dictionary: (
-  1:  "full",
+$cells-per-row: 10;
+
+$number-names: (
+  1:  "one",
+  2:  "two",
+  3:  "three",
+  4:  "four",
+  5:  "five",
+  6:  "six",
+  7:  "seven",
+  8:  "eight",
+  9:  "nine",
+  10: "ten",
+  11: "eleven",
+  12: "twelve",
+  13: "thirteen",
+  14: "fourteen",
+  15: "fifteen",
+  16: "sixteen",
+  17: "seventeen",
+  18: "eighteen",
+  19: "nineteen",
+  20: "twenty"
+) !default;
+
+// Lookup table to get shares as names by numeric value.
+
+$share-names: (
   2:  "half",
   3:  "third",
-  4:  "quarter",
+  4:  "fourth",
   5:  "fifth",
   6:  "sixth",
   7:  "seventh",
-  8:  "eigth",
+  8:  "eighth",
   9:  "ninth",
   10: "tenth",
   11: "eleventh",
   12: "twelfth",
   13: "thirteenth",
   14: "fourteenth",
-  15: "fifteenth"
+  15: "fifteenth",
+  16: "sixteenth",
+  17: "seventeenth",
+  18: "eighteenth",
+  19: "nineteenth",
+  20: "twentieth"
 ) !default;
 ```
 
@@ -114,25 +156,6 @@ $width-breakpoints: (
   "desktop":    960px,
   "widescreen": 1200px
 ) !default;
-```
-
-## Compiling the Sass files
-Install Sass on your system if you didn't already.
-
-```bash
-gem install sass
-```
-
-Assuming you have node and npm installed, switch to the project root and install grunt and its sass plugin.
-
-```bash
-npm install
-```
-
-After that, compiling the Sass files into CSS is as easy as typing:
-
-```bash
-grunt dist
 ```
 
 ## Float based
