@@ -33,23 +33,11 @@
   @return "#{$shares}-#{$share-name}";
 }
 
-// Build all breakpoint cell classes for a single width.
-
-@mixin responsize-sizes($index, $size-name) {
-  @each $name, $width in $width-breakpoints {
-    @media (min-width: $width) {
-      .cell-#{$name}-#{$size-name} {
-        @include cell-size($index);
-      }
-
-      .cell-offset-#{$name}-#{$size-name} {
-        @include offset-size($index);
-      }
-    }
-  }
-}
-
 // Build all cell classes.
+//
+// Builds the classes without media queries first and then with increasing media query width
+// the other classes so the generated css will follow the mobile first strategy which is needed
+// for the responsive features.
 
 @mixin build-cells() {
   @for $index from 1 through $cells-per-row {
@@ -62,9 +50,23 @@
     .cell-offset-#{$size-name} {
       @include offset-size($index);
     }
+  }
 
-    @if $responsive-size-classes {
-      @include responsize-sizes($index, $size-name);
+  @if $responsive-size-classes {
+    @each $name, $width in $width-breakpoints {
+      @media (min-width: $width) {
+        @for $index from 1 through $cells-per-row {
+          $size-name: size-name-by-index($index);
+
+          .cell-#{$name}-#{$size-name} {
+            @include cell-size($index);
+          }
+
+          .cell-offset-#{$name}-#{$size-name} {
+            @include offset-size($index);
+          }
+        }
+      }
     }
   }
 }
