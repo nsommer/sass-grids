@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="demo-site.css">
   </head>
   <body>
-  <a href="https://github.com/nsommer"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+  <a href="https://github.com/nsommer/sass-grids"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
     <div class="container">
       <h1>sass-grids demo</h1>
 
@@ -18,107 +18,31 @@
 
         It uses the standard configuration with <strong>10 cells per line</strong> and a gutter width of 1em.
 
-        The naming convention of the grid size classes follow natural language instead of decimal numbers for better readability. For example: A cell that takes 50% of its parent width is called <strong>cell-half</strong>.
+        The naming convention of the grid size classes follow natural language instead of decimal numbers for better readability. For example: A cell that takes 50% of its parent width in a grid system with up to 10 cells per row is called <strong>cell-five-tenths</strong>.
       </p>
 
       <h3>2 half width cells</h3>
 
 <pre><code class="prettyprint">
 &lt;div class="grid"&gt;
-  &lt;div class="cell cell-half"&gt;
+  &lt;div class="cell cell-five-tenths"&gt;
     1/2 width
   &lt;/div&gt;
-  &lt;div class="cell cell-half"&gt;
+  &lt;div class="cell cell-five-tenths"&gt;
     1/2 width
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
       <div class="grid">
-        <div class="cell cell-half">
+        <div class="cell cell-five-tenths">
           <div class="funny-box">
             1/2 width
           </div>
         </div>
-        <div class="cell cell-half">
+        <div class="cell cell-five-tenths">
           <div class="funny-box">
             1/2 width
-          </div>
-        </div>
-      </div>
-
-      <h3>3 third width cells</h3>
-
-<pre><code class="prettyprint">
-&lt;div class="grid"&gt;
-  &lt;div class="cell cell-third"&gt;
-    1/3 width
-  &lt;/div&gt;
-  &lt;div class="cell cell-third"&gt;
-    1/3 width
-  &lt;/div&gt;
-  &lt;div class="cell cell-third"&gt;
-    1/3 width
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-      <div class="grid">
-        <div class="cell cell-third">
-          <div class="funny-box">
-            1/3 width
-          </div>
-        </div>
-        <div class="cell cell-third">
-          <div class="funny-box">
-            1/3 width
-          </div>
-        </div>
-        <div class="cell cell-third">
-          <div class="funny-box">
-            1/3 width
-          </div>
-        </div>
-      </div>
-
-      <h3>4 quarter width cells</h3>
-
-<pre><code class="prettyprint">
-&lt;div class="grid"&gt;
-  &lt;div class="cell cell-quarter"&gt;
-    1/4 width
-  &lt;/div&gt;
-  &lt;div class="cell cell-quarter"&gt;
-    1/4 width
-  &lt;/div&gt;
-  &lt;div class="cell cell-quarter"&gt;
-    1/4 width
-  &lt;/div&gt;
-  &lt;div class="cell cell-quarter"&gt;
-    1/4 width
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-      <div class="grid">
-        <div class="cell cell-quarter">
-          <div class="funny-box">
-            1/4 width
-          </div>
-        </div>
-        <div class="cell cell-quarter">
-          <div class="funny-box">
-            1/4 width
-          </div>
-        </div>
-        <div class="cell cell-quarter">
-          <div class="funny-box">
-            1/4 width
-          </div>
-        </div>
-        <div class="cell cell-quarter">
-          <div class="funny-box">
-            1/4 width
           </div>
         </div>
       </div>
@@ -130,74 +54,74 @@
       </p>
 
       <div class="grid">
-        <div class="cell cell-quarter">
+        <div class="cell cell-two-tenths">
           <div class="funny-box">
-            1/4 width
+            2/10
           </div>
         </div>
-        <div class="cell cell-half">
+        <div class="cell cell-four-tenths">
           <div class="funny-box">
-            1/2 width
+            4/10
           </div>
         </div>
-        <div class="cell cell-eigth">
+        <div class="cell cell-three-tenths">
           <div class="funny-box">
-            1/8 width
+            3/10
           </div>
         </div>
-        <div class="cell cell-eigth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
-            1/8 width
+            1/10
           </div>
         </div>
       </div>
       <div class="grid">
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
         </div>
-        <div class="cell cell-tenth">
+        <div class="cell cell-one-tenth">
           <div class="funny-box">
             1/10 width
           </div>
@@ -212,40 +136,40 @@
 
 <pre><code class="prettyprint">
 &lt;div class="grid"&gt;
-  &lt;div class="cell cell-third"&gt;
+  &lt;div class="cell cell-three-tenths"&gt;
     1/3 left
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="grid"&gt;
-  &lt;div class="cell cell-third cell-right"&gt;
+  &lt;div class="cell cell-three-tenths cell-right"&gt;
     1/3 right
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="grid"&gt;
-  &lt;div class="cell cell-third cell-center"&gt;
+  &lt;div class="cell cell-three-tenths cell-center"&gt;
     1/3 centered
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
       <div class="grid">
-        <div class="cell cell-third">
+        <div class="cell cell-three-tenths">
           <div class="funny-box">
-            1/3 left
+            3/10 left
           </div>
         </div>
       </div>
       <div class="grid">
-        <div class="cell cell-third cell-right">
+        <div class="cell cell-three-tenths cell-right">
           <div class="funny-box">
-            1/3 right
+            3/10 right
           </div>
         </div>
       </div>
       <div class="grid">
-        <div class="cell cell-third cell-center">
+        <div class="cell cell-three-tenths cell-center">
           <div class="funny-box">
-            1/3 centered
+            3/10 centered
           </div>
         </div>
       </div>
@@ -260,22 +184,22 @@
 
 <pre><code class="prettyprint">
 &lt;div class="grid"&gt;
-  &lt;div class="cell cell-quarter cell-offset-quarter"&gt;
+  &lt;div class="cell cell-four-tenths cell-offset-two-tenths"&gt;
     1/4 width
   &lt;/div&gt;
-  &lt;div class="cell cell-half"&gt;
+  &lt;div class="cell cell-four-tenths"&gt;
     1/2 width
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
       <div class="grid">
-        <div class="cell cell-quarter cell-offset-quarter">
+        <div class="cell cell-four-tenths cell-offset-two-tenths">
           <div class="funny-box">
             1/4 width
           </div>
         </div>
-        <div class="cell cell-half">
+        <div class="cell cell-four-tenths">
           <div class="funny-box">
             1/2 width
           </div>
@@ -292,40 +216,45 @@
 
 <pre><code class="prettyprint">
 &lt;div class="grid"&gt;
-  &lt;div class="cell cell-half cell-desktop-quarter"&gt;
-    1/2 or 1/4
+  &lt;div class="cell cell-five-tenths cell-desktop-two-tenths"&gt;
+    1/2 or 1/5
   &lt;/div&gt;
-  &lt;div class="cell cell-half cell-desktop-quarter"&gt;
-    1/2 or 1/4
+  &lt;div class="cell cell-five-tenths cell-desktop-two-tenths"&gt;
+    1/2 or 1/5
   &lt;/div&gt;
-  &lt;div class="cell cell-half cell-desktop-quarter"&gt;
-    1/2 or 1/4
+  &lt;div class="cell cell-five-tenths cell-desktop-two-tenths"&gt;
+    1/2 or 1/5
   &lt;/div&gt;
-  &lt;div class="cell cell-half cell-desktop-quarter"&gt;
-    1/2 or 1/4
+  &lt;div class="cell cell-five-tenths cell-desktop-two-tenths"&gt;
+    1/2 or 1/5
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
       <div class="grid">
-        <div class="cell cell-half cell-desktop-quarter">
+        <div class="cell cell-five-tenths cell-desktop-two-tenths">
           <div class="funny-box">
-            1/2 or 1/4
+            1/2 or 1/5
           </div>
         </div>
-        <div class="cell cell-half cell-desktop-quarter">
+        <div class="cell cell-five-tenths cell-desktop-two-tenths">
           <div class="funny-box">
-            1/2 or 1/4
+            1/2 or 1/5
           </div>
         </div>
-        <div class="cell cell-half cell-desktop-quarter">
+        <div class="cell cell-five-tenths cell-desktop-two-tenths">
           <div class="funny-box">
-            1/2 or 1/4
+            1/2 or 1/5
           </div>
         </div>
-        <div class="cell cell-half cell-desktop-quarter">
+        <div class="cell cell-five-tenths cell-desktop-two-tenths">
           <div class="funny-box">
-            1/2 or 1/4
+            1/2 or 1/5
+          </div>
+        </div>
+        <div class="cell cell-five-tenths cell-desktop-two-tenths">
+          <div class="funny-box">
+            1/2 or 1/5
           </div>
         </div>
       </div>
