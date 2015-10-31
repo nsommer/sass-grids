@@ -5,6 +5,9 @@
 language: nodejs
 node_js:
   - "4.1"
+branches:
+  only:
+    - master
 before_install: gem install sass
 before_script: npm install -g grunt-cli
 script: grunt dist
