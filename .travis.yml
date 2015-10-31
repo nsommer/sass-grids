@@ -9,5 +9,7 @@ branches:
   only:
     - master
 before_install: gem install sass
-before_script: npm install -g grunt-cli
+before_script:
+  - npm install -g grunt-cli
+  - npm install
 script: grunt dist
