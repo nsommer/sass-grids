@@ -1,0 +1,16 @@
+//
+// Utilities to better place the cells.
+//
+// This does not include the offset classes because they are generated at build time.
+//
+
+// Float a cell to the right.
+
+.cell-right { float: right; }
+
+// Center a cell horizontally.
+
+.cell-center {
+  margin: 0 auto;
+  float: none;
+}

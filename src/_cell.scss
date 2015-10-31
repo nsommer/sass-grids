@@ -14,12 +14,3 @@
 // Sizes.
 
 @include build-cells;
-
-// Utilities.
-
-.cell-right { float: right; }
-
-.cell-center {
-  margin: 0 auto;
-  float: none;
-}
