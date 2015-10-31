@@ -1,6 +1,6 @@
 {
   "name": "sass-grids",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "homepage": "https://github.com/nsommer/sass-grids",
   "authors": [
     "Nils Sommer"
@@ -23,7 +23,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    ".travis.yml"
   ],
   "devDependencies": {
     "grunt": "~0.4.5",
