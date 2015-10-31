@@ -167,6 +167,7 @@ I needed a grid system for a website I was building so I took the opportunity to
 Check out the [blog post](https://nilssommer.de/articles/2-building-a-grid-system-with-sass) I wrote about it.
 
 ## Changelog
+- **1.0.0** Completely changed CSS class names.
 - **0.1.2** Eases customization
 - **0.1.1** Bug fixes
 - **0.1.0** Initial release
