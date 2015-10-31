@@ -1,0 +1,10 @@
+#
+# Compile the sass to css and minify it on every commit.
+#
+
+language: nodejs
+node_js:
+  - "4.1"
+before_install: gem install sass
+before_script: npm install -g grunt-cli
+script: grunt dist
