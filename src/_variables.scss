@@ -4,36 +4,65 @@
 //
 
 // Gutter between cells.
-$gutter: 1em;
+$gutter: 1em !default;
 
 // Number of grids that float next to each other in one row.
-$cells-per-row: 10;
+$cells-per-row: 10 !default;
 
-// Dictionary for number<->word mapping.
-// Needed to generate human readable class names.
-//
-// If you need smaller cells, add entries to the dictionary map.
+// Lookup table to get number names by number value.
 
-$dictionary: (
-  1:  "full",
+$number-names: (
+  1:  "one",
+  2:  "two",
+  3:  "three",
+  4:  "four",
+  5:  "five",
+  6:  "six",
+  7:  "seven",
+  8:  "eight",
+  9:  "nine",
+  10: "ten",
+  11: "eleven",
+  12: "twelve",
+  13: "thirteen",
+  14: "fourteen",
+  15: "fifteen",
+  16: "sixteen",
+  17: "seventeen",
+  18: "eighteen",
+  19: "nineteen",
+  20: "twenty"
+) !default;
+
+// Lookup table to get shares as names by numeric value.
+
+$share-names: (
   2:  "half",
   3:  "third",
-  4:  "quarter",
+  4:  "fourth",
   5:  "fifth",
   6:  "sixth",
   7:  "seventh",
-  8:  "eigth",
+  8:  "eighth",
   9:  "ninth",
   10: "tenth",
   11: "eleventh",
   12: "twelfth",
   13: "thirteenth",
   14: "fourteenth",
-  15: "fifteenth"
-);
+  15: "fifteenth",
+  16: "sixteenth",
+  17: "seventeenth",
+  18: "eighteenth",
+  19: "nineteenth",
+  20: "twentieth"
+) !default;
+
+// String to append to a word to pluralize it.
+$pluralizer: "s" !default;
 
 // Enable/Disable responsive size classes.
-$responsive-size-classes: true;
+$responsive-size-classes: true !default;
 
 // Define break points for responsive design here.
 //
@@ -50,4 +79,4 @@ $width-breakpoints: (
   "tablet":     720px,
   "desktop":    960px,
   "widescreen": 1200px
-);
+) !default;

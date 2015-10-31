@@ -2,61 +2,69 @@
 // Mixins for generation of cell sizes.
 //
 
-// Build styles for a cell.
+// Calculate a width that depends upon the numeric value in the $dictionary map.
 
 @function calc-width($index) {
-  @return 100% * (1 / $index);
+  @return 100% * ($index / $cells-per-row);
 }
 
-@mixin build-cell($index) {
+// Get the width for a cell.
+
+@mixin cell-size($index) {
   width: calc-width($index);
 }
 
-@mixin build-offset($index) {
+// Get the margin for a specific offset.
+
+@mixin offset-size($index) {
   margin-left: calc-width($index);
 }
 
-// Validate variables set by user.
+// Construct a human readable size name.
 
-@if ($cells-per-row > (length($dictionary) + 1)) {
-  @error "For #{$cells-per-row} you need at least #{$cells-per-row - 1} entries in the dictionary map.";
-}
+@function size-name-by-index($index) {
+  $share-name: map-get($share-names, $cells-per-row);
+  $shares: map-get($number-names, $index);
 
-@if ($cells-per-row < 1) {
-  @error "$cells-per-row must be greater than zero.";
-} @else if($cells-per-row == 1) {
-  @warn "Setting $cells-per-row to 1 does not make any sense! You should set it to at least 2.";
-}
-
-@mixin build-cell-sizes($index) {
-  // Standard cell size and offset.
-  .cell-#{map-get($dictionary, $index)} {
-    @include build-cell($index);
+  @if $index > 1 {
+    $share-name: "#{$share-name}#{$pluralizer}";
   }
 
-  .cell-offset-#{map-get($dictionary, $index)} {
-    @include build-offset($index);
-  }
+  @return "#{$shares}-#{$share-name}";
+}
 
-  @if $responsive-size-classes {
-    // Responsive size classes.
-    @each $name, $width in $width-breakpoints {
-      @media (min-width: $width) {
-        .cell-#{$name}-#{map-get($dictionary, $index)} {
-          @include build-cell($index);
-        }
+// Build all breakpoint cell classes for a single width.
 
-        .cell-offset-#{$name}-#{map-get($dictionary, $index)} {
-          @include build-offset($index);
-        }
+@mixin responsize-sizes($index, $size-name) {
+  @each $name, $width in $width-breakpoints {
+    @media (min-width: $width) {
+      .cell-#{$name}-#{$size-name} {
+        @include cell-size($index);
+      }
+
+      .cell-offset-#{$name}-#{$size-name} {
+        @include offset-size($index);
       }
     }
   }
 }
 
-// Generate the cell size classes.
+// Build all cell classes.
 
-@for $index from 1 through $cells-per-row {
-  @include build-cell-sizes($index);
+@mixin build-cells() {
+  @for $index from 1 through $cells-per-row {
+    $size-name: size-name-by-index($index);
+
+    .cell-#{$size-name} {
+      @include cell-size($index);
+    }
+
+    .cell-offset-#{$size-name} {
+      @include offset-size($index);
+    }
+
+    @if $responsive-size-classes {
+      @include responsize-sizes($index, $size-name);
+    }
+  }
 }
-
