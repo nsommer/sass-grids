@@ -5,56 +5,66 @@
 // Calculate a width that depends upon the numeric value in the $dictionary map.
 
 @function calc-width($index) {
-  @return 100% * (1 / $index);
+  @return 100% * ($index / $cells-per-row);
 }
 
 // Get the width for a cell.
 
-@mixin build-cell-size($index) {
+@mixin cell-size($index) {
   width: calc-width($index);
 }
 
 // Get the margin for a specific offset.
 
-@mixin build-offset-size($index) {
+@mixin offset-size($index) {
   margin-left: calc-width($index);
 }
 
-// Build responsive sizing and offset classes by cell size.
+// Construct a human readable size name.
 
-@mixin build-cell-sizes($index) {
-  $width-name: map-get($dictionary, $index);
+@function size-name-by-index($index) {
+  $share-name: map-get($share-names, $cells-per-row);
+  $shares: map-get($number-names, $index);
 
-  // Cell size.
-  .cell-#{$width-name} {
-    @include build-cell-size($index);
+  @if $index > 1 {
+    $share-name: "#{$share-name}#{$pluralizer}";
   }
 
-  // Cell offset.
-  .cell-offset-#{$width-name} {
-    @include build-offset-size($index);
-  }
+  @return "#{$shares}-#{$share-name}";
+}
 
-  // Responsive cell sizes and offsets.
-  @if $responsive-size-classes {
-    @each $name, $width in $width-breakpoints {
-      @media (min-width: $width) {
-        .cell-#{$name}-#{$width-name} {
-          @include build-cell-size($index);
-        }
+// Build all breakpoint cell classes for a single width.
 
-        .cell-offset-#{$name}-#{$width-name} {
-          @include build-offset-size($index);
-        }
+@mixin responsize-sizes($index, $size-name) {
+  @each $name, $width in $width-breakpoints {
+    @media (min-width: $width) {
+      .cell-#{$name}-#{$size-name} {
+        @include cell-size($index);
+      }
+
+      .cell-offset-#{$name}-#{$size-name} {
+        @include offset-size($index);
       }
     }
   }
 }
 
-// Builds all the classes.
+// Build all cell classes.
 
-@mixin build-cells {
+@mixin build-cells() {
   @for $index from 1 through $cells-per-row {
-    @include build-cell-sizes($index);
+    $size-name: size-name-by-index($index);
+
+    .cell-#{$size-name} {
+      @include cell-size($index);
+    }
+
+    .cell-offset-#{$size-name} {
+      @include offset-size($index);
+    }
+
+    @if $responsive-size-classes {
+      @include responsize-sizes($index, $size-name);
+    }
   }
 }

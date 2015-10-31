@@ -1,16 +1,29 @@
 //
-// This framework can be customized by changing the variables in src/_variables.scss.
-// Therefore, do some validations to interrupt the build process in case the variables contain bullshit.
+// Rather than only using the precompiled CSS with the default settings, the grid system can be customized
+// by changing the variable values. This partial contains useful validations that check whether customizations
+// are valid.
+//
+// The strategy is to:
+//   1.) Raise errors when variable values would lead to compilation errors anyway. In this case the error
+//       messages of the validations here are more useful than the generic compiler errors.
+//   2.) Raise warnings when variable values don't make much sense but when the sources will compile
+//       successfully.
 //
 
-// Check whether enough sizes are specified, otherwise it doesn't make sense to build those classes.
-
-@if ($cells-per-row > (length($dictionary) + 1)) {
-  @error "For #{$cells-per-row} you need at least #{$cells-per-row - 1} entries in the dictionary map.";
+@if $cells-per-row > (length($share-names) + 1) {
+  @error "The map $share-names doesn't contain enough entries to generate #{$cells-per-row} cell sizes.";
 }
 
-@if ($cells-per-row < 1) {
-  @error "$cells-per-row must be greater than zero.";
-} @else if($cells-per-row == 1) {
-  @warn "Setting $cells-per-row to 1 does not make any sense! You should set it to at least 2.";
+@if $cells-per-row > length($number-names) {
+  @error "The map $number-names doesn't contain enough entries to generate #{$cells-per-row} cell sizes.";
+}
+
+@if $responsive-size-classes and (length($width-breakpoints) < 1) {
+  @warn "You should define at least one width breakpoint when enabling responsive size classes.";
+}
+
+@if $cells-per-row < 1 {
+  @error "$cells-per-row must be greater than zero."
+} @else if $cells-per-row < 2 {
+  @warn "Your grid system only contains full width cells.";
 }
