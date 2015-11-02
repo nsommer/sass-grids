@@ -54,9 +54,9 @@ For detailed documentation, visit the [demo page](https://nsommer.github.io/sass
 
 ```html
 <div class="grid">
-  <div class="cell cell-five-tenths">I'm a cell taking half the width of my parent.        </div>
-  <div class="cell cell-four-tenths">I'm a cell taking a quarter of the width of my parent.</div>
-  <div class="cell cell-one-tenth">  I'm a cell taking a quarter of the width of my parent.</div>
+  <div class="cell cell-five-tenths">I'm a cell taking half the width of my parent.       </div>
+  <div class="cell cell-four-tenths">I'm a cell taking four tenths the width of my parent.</div>
+  <div class="cell cell-one-tenth">  I'm a cell taking one tenths the width of my parent. </div>
 </div>
 ```
 
