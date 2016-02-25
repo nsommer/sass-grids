@@ -1,4 +1,4 @@
-CSS Grid System [![Build Status](https://travis-ci.org/nsommer/sass-grids.svg)](https://travis-ci.org/nsommer/sass-grids)
+CSS Grid System [![Build Status](https://travis-ci.org/nsommer/sass-grids.svg)](https://travis-ci.org/nsommer/sass-grids) [![devDependency Status](https://img.shields.io/david/dev/nsommer/sass-grids.svg)](https://david-dm.org/nsommer/sass-grids#info=devDependencies)
 ================
 A simple, responsive and customizable grid system for CSS, built with Sass.
 
